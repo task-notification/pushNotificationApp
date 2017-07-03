@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1054020783266",
+    "firebase_url": "https://notificationapp-59584.firebaseio.com",
+    "project_id": "notificationapp-59584",
+    "storage_bucket": "notificationapp-59584.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054020783266:android:dfef5b4c3a0908bb",
+        "android_client_info": {
+          "package_name": "de.reu_network.pushnotificationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054020783266-7bl1q74f9glfnifpna5std4tpb8tctga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS_ifR3Ou-tXHMrnvoe6MT-tRimm88CsY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
