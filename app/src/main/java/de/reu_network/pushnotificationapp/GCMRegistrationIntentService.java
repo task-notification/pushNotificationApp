@@ -8,6 +8,11 @@ import android.util.Log;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
 
+import java.io.BufferedOutputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 /**
  * Created by Maestro on 03.07.2017.
  */
@@ -45,6 +50,27 @@ public class GCMRegistrationIntentService extends IntentService {
         {
             Log.d("GCMRegIntentService", "Registration error");
             registrationComplete = new Intent(REGISTRATION_ERROR);
+        }
+
+        // send token to server
+        HttpURLConnection client = null;
+        try
+        {
+            Log.d("GCMRegIntentService", "try to send token to app server....");
+            URL url = new URL("http://localhost/push/device");
+            client = (HttpURLConnection) url.openConnection();
+            client.setRequestMethod("POST");
+            client.setRequestProperty("subscription_id", token);
+
+            int response = client.getResponseCode();
+            Log.d("GCMRegIntentService", "app server response code: "+response);
+        }
+        catch(Exception e)
+        {
+            Log.d("GCMRegIntentService", "app server error: " + e.getMessage());
+        }
+        finally {
+            client.disconnect();
         }
 
         LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);

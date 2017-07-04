@@ -4,6 +4,9 @@ import android.content.Intent;
 
 import com.google.android.gms.iid.InstanceIDListenerService;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 /**
  * Created by Maestro on 03.07.2017.
  */

@@ -34,7 +34,6 @@ public class GCMPushReceiverService extends GcmListenerService {
         //Build notification
         NotificationCompat.Builder noBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("My GCM message :X:X")
                 .setContentText(message)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent);
